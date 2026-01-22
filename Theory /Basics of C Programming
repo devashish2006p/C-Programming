@@ -54,9 +54,40 @@ C is used in many real-world areas, including:
 
 ---
 
-## Summary
+## Structure of a C Program
 
-C is a stable, efficient, and flexible programming language. Learning C builds
-a strong foundation for understanding operating systems, memory management,
-and low-level programming concepts.
+A C program follows a well-defined structure that helps the compiler
+understand how the program is organized and executed.
+
+  1. Documentation Section - This section contains comments that describe the program. 
+  2. Link Section - The link section includes header files using the **#include** directive. These header files provide function declarations and macros. 
+  3. Definition Section - This section is used to define constants and macros using **#define**. 
+  4. Global Declaration Section - Global variables and function declarations are defined here. These are accessible throughout the program. 
+  5. Main Section - The **main()** function is the entry point of a C program. Program execution always starts from this function. 
+  6. Subprogram Section - This section contains user-defined functions. These functions help in modular programming and code reuse. 
+
+---
+## Compilation Process in C
+
+The compilation process in C is a step-by-step procedure that converts
+human-readable source code into an executable program.
+
+It consists of the following stages:
+
+- **Preprocessing:**  
+  Handles directives such as `#include`, `#define`, and comments before
+  actual compilation begins.
+
+- **Compilation:**  
+  Checks syntax and translates the preprocessed code into assembly language.
+
+- **Assembly:**  
+  Converts assembly code into machine-level object code.
+
+- **Linking:**  
+  Combines object files with required libraries to produce the final executable.
+
+This process ensures that C programs are efficiently translated into
+machine-executable form with proper error checking.
+
 
