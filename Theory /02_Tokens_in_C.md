@@ -1,4 +1,4 @@
-## 2.2 Character Set and C Tokens
+## Character Set and C Tokens
 
 In C programming, **character set** and **tokens** are the basic building blocks of the language.
 
@@ -7,7 +7,7 @@ In C programming, **character set** and **tokens** are the basic building blocks
 
 ---
 
-## 2.2.1 C Character Set
+## C Character Set
 
 The **C character set** includes all characters that can be used to write a C program.
 
@@ -46,7 +46,7 @@ Examples:
 
 ---
 
-## 2.2.2 C Tokens
+## C Tokens
 
 **Tokens** are the smallest individual elements in a C program that have meaning to the compiler.
 
@@ -117,7 +117,7 @@ Example:
 
 ---
 
-## 2.2.3 Role of Tokens in C Code
+## Role of Tokens in C Code
 
 Tokens give **meaning and structure** to a C program.
 
@@ -130,7 +130,7 @@ Tokens give **meaning and structure** to a C program.
 
 ---
 
-## 2.3 Identifiers and Keywords
+## Identifiers and Keywords
 
 Identifiers and keywords are important for writing structured C programs.
 
@@ -139,7 +139,7 @@ Identifiers and keywords are important for writing structured C programs.
 
 ---
 
-## 2.3.1 Identifiers – Definition and Rules
+## Identifiers – Definition and Rules
 
 ### Definition
 
@@ -170,7 +170,7 @@ count, _sum, numberOfStudents
 
 ---
 
-## 2.3.2 Keywords in C
+## Keywords in C
 
 Keywords are **reserved words** with predefined meaning in C.
 
@@ -187,7 +187,7 @@ Keywords are **reserved words** with predefined meaning in C.
 
 ---
 
-## 2.3.3 Difference Between Identifiers and Keywords
+## Difference Between Identifiers and Keywords
 
 | Identifiers                      | Keywords                 |
 | -------------------------------- | ------------------------ |
@@ -197,7 +197,7 @@ Keywords are **reserved words** with predefined meaning in C.
 
 ---
 
-## 2.4 Data Types and Variables
+## Data Types and Variables
 
 Data types and variables decide:
 
@@ -206,7 +206,7 @@ Data types and variables decide:
 
 ---
 
-## 2.4.1 Data Types in C
+## Data Types in C
 
 ### Basic Data Types
 
@@ -232,7 +232,7 @@ Data types and variables decide:
 
 ---
 
-## 2.4.2 Declaring and Initialising Variables
+## Declaring and Initialising Variables
 
 ### Declaration
 
@@ -258,7 +258,7 @@ int x = 5, y = 10, z = 15;
 
 ---
 
-## 2.4.3 Scope and Lifetime of Variables
+## Scope and Lifetime of Variables
 
 ### Scope
 
@@ -273,13 +273,13 @@ int x = 5, y = 10, z = 15;
 
 ---
 
-## 2.5 Constants and Symbolic Constants
+## Constants and Symbolic Constants
 
 Constants are values that **do not change** during program execution.
 
 ---
 
-## 2.5.1 Constants in C
+## Constants in C
 
 ### Types of Constants
 
@@ -292,7 +292,7 @@ Constants are values that **do not change** during program execution.
 
 ---
 
-## 2.5.2 Symbolic Constants
+## Symbolic Constants
 
 ### Using #define
 
@@ -310,7 +310,7 @@ const int MAX_USERS = 100;
 
 ---
 
-## 2.5.3 Uses of Constants
+## Uses of Constants
 
 * Mathematical values (PI)
 * Limits (MAX_USERS)
@@ -318,11 +318,11 @@ const int MAX_USERS = 100;
 
 ---
 
-## 2.6 Using Variables and Constants Effectively
+## Using Variables and Constants Effectively
 
 ---
 
-## 2.6.1 Best Practices for Variables
+## Best Practices for Variables
 
 * Use meaningful names
 * Choose correct data type
@@ -331,7 +331,7 @@ const int MAX_USERS = 100;
 
 ---
 
-## 2.6.2 Best Practices for Constants
+## Best Practices for Constants
 
 * Avoid magic numbers
 * Use symbolic constants
@@ -346,7 +346,7 @@ Example:
 
 ---
 
-## 2.6.3 Example Program
+## Example Program
 
 ```c
 #include <stdio.h>
