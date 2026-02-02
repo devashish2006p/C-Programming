@@ -171,22 +171,227 @@ int main() {
 ---
 
 #### Formatted Output Functions 
-printf()
+printf() - It is used to print formatted output on the screen. 
 
-fprintf()
+  - Syntax : int printf(const char *format, ...);
+      - int = It is a return type
+      - printf = Function name
+      - const char *format = parameters, it contains normal text + format specifiers
+      - ... = These are the variable arguments.
+   
+  - Example :
+    ```
+    #include <stdio.h>
+    int main() {
+    int age = 22;
+    char name[] = "Santosh";
 
-sprintf()
+    printf("Name: %s, Age: %d\n", name, age);
+    return 0;
+    }
+    ```
 
-snprintf()
+fprintf() - It is used to print formatted output into a file or stream. 
 
-vprintf()
+  - Syntax : int fprintf(FILE *stream, const char *format, ...);
+      - Breakdown :-
+          - int = Return type
+          - fprintf = Function
+          - *FILE stream = Target File pointer
+          - *const chart format = format specifiers
+          - ... (ellipsis) = variable argument
+       
+    - Example :
+```
+#include <stdio.h>
+int main() {
+    FILE *fp;
+    fp = fopen("output.txt", "w");   // open file in write mode
 
-vfprintf()
+    int age = 25;
+    char name[] = "Santosh";
 
-vsprintf()
+    // Write formatted output into the file
+    fprintf(fp, "Name: %s, Age: %d\n", name, age);
 
-vsnprintf()
+    fclose(fp);   // close the file
+    return 0;
+}
+```
 
+sprintf() - It writes formatted output into a string (character array) instead of printing it on the screen. It works like printf(), but the result is stored in a buffer you provide. 
+
+  - Syntax : int sprintf(char *str, const cahr *format, ...);
+      Breakdown :
+        - int = return type
+        - sprintf = function name
+        - *char str = target string
+        - *const char format = format string
+        - ... (ellipsis) = variable arguments. 
+  - Example
+```
+#include <stdio.h>
+int main() {
+    char buffer[100];
+    int age = 25;
+    char name[] = "Santosh";
+
+    // Store formatted output into buffer
+    sprintf(buffer, "Name: %s, Age: %d", name, age);
+
+    // Print the buffer content
+    printf("%s\n", buffer);
+
+    return 0;
+}
+```
+snprintf() - It is a safer version of *sprintf()* that writes formatted output into a string but also limits the number of characters written. It prevents buffer overflow by specifying the maximum size of the target buffer. 
+- Syntax : int snprintf(char *str, size_t size, const char *format, ...);
+    - Breakdown :
+      - int = return type
+      - snprintf = function name
+      - *char str = target string
+      - size_t size = maximum number of characters to write
+      - *const char format = format specifiers
+      - ... (ellipsis) = variable arguments. 
+- Example
+```
+#include <stdio.h>
+
+int main() {
+    char buffer[20];
+    int age = 25;
+    char name[] = "Santosh";
+
+    // Safe formatted output into buffer
+    snprintf(buffer, sizeof(buffer), "Name: %s, Age: %d", name, age);
+
+    // Print the buffer content
+    printf("%s\n", buffer);
+
+    return 0;
+}
+```
+vprintf() - It prints formattted output to the standard output using a *va_list* of arguments. It is mainly used inside functions that handle variable arguments indireclty. 
+
+  - Syntax : int vprintf(const char *format, va_list arg); 
+      - Breakdown
+          - int = return type
+          - vprintf = function name
+          - *const char format = format specifiers
+          - va_list arg = argument list
+  - Example
+```
+#include <stdio.h>
+#include <stdarg.h>
+
+// Custom function using vprintf
+void display(const char *format, ...) {
+    va_list args;
+    va_start(args, format);   // initialize va_list
+    vprintf(format, args);    // use vprintf to print
+    va_end(args);             // clean up
+}
+
+int main() {
+    display("Name: %s, Age: %d\n", "Santosh", 25);
+    return 0;
+}
+```
+
+vfprintf() - It prints formatted output into a file stream using a va_list of arguments. It is mainly used inside functions that handle variable arguments indirectly and want to write output to a file. 
+  - syntax : int vfprintf(FILE *stream, const char *format, va_list arg);
+      - Breakdown
+          - int = return type
+          - vfprintf = function name
+          - *File stream = target file pointer
+          - *const char format = format specifiers
+          - va_list arg = argument list 
+  - Example
+```
+#include <stdio.h>
+#include <stdarg.h>
+
+// Custom function using vfprintf
+void logToFile(FILE *fp, const char *format, ...) {
+    va_list args;
+    va_start(args, format);        // initialize argument list
+    vfprintf(fp, format, args);    // write formatted output to file
+    va_end(args);                  // clean up
+}
+
+int main() {
+    FILE *fp = fopen("log.txt", "w");   // open file in write mode
+
+    logToFile(fp, "Name: %s, Age: %d\n", "Santosh", 25);
+
+    fclose(fp);   // close the file
+    return 0;
+}
+```
+vsprintf() - It writes formatted output into a string using a *va_list* of arguments. It works like *sprintf()* but instead of variable arguments (...), it uses a *va_list* for indirect argument handling. 
+
+  - Syntax : int vsprintf(char *str, const char *format, va_list arg);
+      - Breakdown
+          - int = return type
+          - vsprintf = function name
+          - *char str = target string
+          - *const char format = format string
+          - va_list arg = argument list 
+  - Example
+```
+#include <stdio.h>
+#include <stdarg.h>
+
+// Custom function using vsprintf
+void makeString(char *buffer, const char *format, ...) {
+    va_list args;
+    va_start(args, format);          // initialize argument list
+    vsprintf(buffer, format, args);  // write formatted output into buffer
+    va_end(args);                    // clean up
+}
+
+int main() {
+    char buf[100];
+    makeString(buf, "Name: %s, Age: %d", "Santosh", 25);
+
+    printf("%s\n", buf);   // print the stored string
+    return 0;
+}
+```
+vsnprintf() - It writes formatted output into a string using a *va_list* of arguments, but with a size limit. It is the safer version of *vsprintf()* because it prevents buffer overflow by restricting the maximum number of characters written. 
+
+  - Syntax : int vsnprintf(char *str, size_t size, const char *format, va_list arg);
+
+      - Breakdown
+          - int = return type
+          - vsnprintf = function name
+          - *char str = target string
+          - size_t size = maximum number of characters to write
+          - *const char format = format specifiers
+          - va_list arg = argument list
+  - Example
+```
+#include <stdio.h>
+#include <stdarg.h>
+
+// Custom function using vsnprintf
+void makeSafeString(char *buffer, size_t size, const char *format, ...) {
+    va_list args;
+    va_start(args, format);                 // initialize argument list
+    vsnprintf(buffer, size, format, args);  // safe formatted output into buffer
+    va_end(args);                           // clean up
+}
+
+int main() {
+    char buf[30];
+    makeSafeString(buf, sizeof(buf), "Name: %s, Age: %d", "Santosh", 25);
+
+    printf("%s\n", buf);   // print the stored string
+    return 0;
+}
+
+```
 ---
 
 ### Unformatted I/O Functions
