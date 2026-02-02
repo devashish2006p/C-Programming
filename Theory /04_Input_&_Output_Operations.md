@@ -40,18 +40,134 @@ printf("Age: %d", age);
 ```
 
 #### Formatted Input Functions
-scanf()
+- scanf() : It is a function in C that reads input from keyboard. It stores the input into variables based on the format specifiers. You must give the address of the variable using '&' so that the value can be stored correctly. It returns the number of inputs that were successfully read.
+  - Ex :
+    ```
+    #include <stdio.h>
+    int main() {
+    int age;
+    printf("Enter your age: ");
+    scanf("%d", &age);   // Reads an integer from keyboard
+    printf("You entered: %d\n", age);
+    return 0;
+    }
+    ```
 
-fscanf()
+- fscanf() : It reads formatted input from a file intstead of the keyboard. It works just like *scanf()*, but the soruce of data is a file stream opened using *fopen()*.
 
-sscanf()
+  ```
+  - #include <stdio.h>
+    int main() {
+    FILE *fp = fopen("data.txt", "r");   // open file in read mode
+    int num;
+    fscanf(fp, "%d", &num);              // read integer from file
+    printf("Number: %d\n", num);
+    fclose(fp);                          // close file
+    return 0;
+    }
+    ```
 
-vscanf()
+- sscanf() : It reads formatted input from a string instead of the keyboard or a file. It works just like scanf(), but the source of data is a string buffer.
+    - Example : -
+  ```
+    #include <stdio.h>
+    int main() {
+    char str[] = "123 45.67";
+    int x; float y;
+    sscanf(str, "%d %f", &x, &y);
+    printf("Integer: %d, Float: %.2f\n", x, y);
+    return 0;
+    }
+  ```
 
-vfscanf()
+- vscanf() : It reads formatted input from the keyboard, but instead of normal arguments, it uses a *va_list (variable argument list)*. This makes it useful when you don't know in advance how many arguments will be passed. User must have initialize *va_list* using *va_start* and clean it with *va_end*.
+    - Example :
+```
+#include <stdio.h>
+#include <stdarg.h>
 
-vsscanf()
+void myInput(const char *format, ...) {
+    va_list args;
+    va_start(args, format);
+    vscanf(format, args);   // uses vscanf internally
+    va_end(args);
+}
 
+int main() {
+    int x; float y;
+    printf("Enter an integer and a float: ");
+    myInput("%d %f", &x, &y);
+    printf("Integer: %d, Float: %.2f\n", x, y);
+    return 0;
+}
+
+```
+
+- vfscanf() - It reads formatted input from a file, but instead of normal arguments it uses a *va_list*. 
+
+  - Rules :
+    1. File must be opened first → You must open the file using fopen()         before using vfscanf().
+
+    2. Pass the file pointer → The first argument must be the file              pointer (FILE *fp).
+
+    3. Use format specifiers correctly → Tell vfscanf() what type of            data to read (%d, %f, %s, etc.).
+
+    4. Arguments handled by va_list → Instead of normal arguments, you          must use a va_list created with <stdarg.h> macros (va_start,             va_end).
+
+    5. Return value → It returns the number of items successfully read          from the file.
+
+    6. Close the file → Always close the file with fclose() after               reading.
+    Example :
+```
+#include <stdio.h>
+#include <stdarg.h>
+
+void myFileInput(FILE *fp, const char *format, ...) {
+    va_list args;
+    va_start(args, format);
+    vfscanf(fp, format, args);   // uses vfscanf internally
+    va_end(args);
+}
+
+int main() {
+    FILE *fp = fopen("info.txt", "r");
+    int id; char name[20];
+    myFileInput(fp, "%d %s", &id, name);
+    printf("ID: %d, Name: %s\n", id, name);
+    fclose(fp);
+    return 0;
+}
+```
+
+- vsscanf() : It reads formatted input from a string but instead of normal arguments, it uses a *va_list*.
+  - Rules :-
+    1. Input source is always a string, not keyboard or file.
+    2. Format specifiers must match the type of data inside the string.
+    3. Instead of normal arguments, you must use a *va_list*.
+    4. Function returns the number of items successfully read.
+    5. Useful for custom parsing functions where arguments are not fixed.
+
+    Example :
+```
+#include <stdio.h>
+#include <stdarg.h>
+
+void myStringInput(const char *str, const char *format, ...) {
+    va_list args;
+    va_start(args, format);
+    vsscanf(str, format, args);   // uses vsscanf internally
+    va_end(args);
+}
+
+int main() {
+    char data[] = "101 Santosh 89.5";
+    int id; char name[20]; float marks;
+    myStringInput(data, "%d %s %f", &id, name, &marks);
+    printf("ID: %d, Name: %s, Marks: %.2f\n", id, name, marks);
+    return 0;
+}
+
+```
 ---
 
 #### Formatted Output Functions 
