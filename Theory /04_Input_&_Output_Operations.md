@@ -406,26 +406,190 @@ These functions deal with **raw data** without formatting.
 
 #### Unformatted Input Functions
 
-getchar()
+getchar() - It is a standard input function that reads a **single character** from the input stream (stdin). - It returns the character as an `int` (ASCII value).
+  - Syntax:-
+    int getchar(void);
+    - Breakdown :-
+      int -> return type
+      getchar -> function name
+      void -> takes no arguments
+  - Example :-
+```
+#include <stdio.h>
 
-getc()
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    ch = getchar();   // reads one character
+    printf("You entered: %c\n", ch);
+    return 0;
+}
+```
 
-fgetc()
+getc() - It is a standard input/output function in C that reads the **next character** from a specified file stream. - It returns the character as an `int` (ASCII value), or `EOF` if the end of file is reached or an error occurs.
 
-fgets()
+  - Syntax :-
+    int getc(FILE *stream);
+    - Breakdown:-
+      int -> return type
+      getc -> function name
+      *File stream -> pointer to a file object (obtained using fopen) from which the character is read.
+  - Example :-
+```
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("example.txt", "r"); // open file in read mode
+    int ch;
+
+    if (fp == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+
+    while ((ch = getc(fp)) != EOF) {  // read characters until EOF
+        putchar(ch);                  // print each character
+    }
+
+    fclose(fp);
+    return 0;
+}
+```
+      
+fgetc() - It is a standard I/O function in C that reads the **next character** from a given file stream. - It returns the character as an `int` (ASCII value), or `EOF` if the end of file is reached or an error occurs.
+  - Syntax :-
+    int fgetc(FILE *stream);
+      - Breakdown :-
+          - int -> return type
+          - fgetc -> function name
+          - *FILE stream -> point to a file object from which the character is read. 
+  - Example :-
+```
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("example.txt", "r"); // open file in read mode
+    int ch;
+
+    if (fp == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+
+    while ((ch = fgetc(fp)) != EOF) {  // read characters until EOF
+        putchar(ch);                   // print each character
+    }
+
+    fclose(fp);
+    return 0;
+}
+```
 
 ---
 
 #### Unformatted Output Functions
 
-putchar()
+putchar() - It is a standard output function in C that writes a **single character** to the output stream (stdout). - It returns the character written as an `int`, or `EOF` if an error occurs.
+  - Syntax :-
+    int putchar(int char);
+    - Breakdown:-
+        - int -> return type
+        - putchar -> function name
+        - int char -> the characterto be printed
+  - Example:-
+```
+#include <stdio.h>
 
-putc()
+int main() {
+    char ch = 'A';
+    putchar(ch);   // prints 'A' to the screen
+    putchar('\n'); // prints a newline
+    return 0;
+}
+```
+putc() - It is a standard output function in C that writes a **single character** to a specified file stream. - It returns the character written as an `int`, or `EOF` if an error occurs.
+  - Syntax :-
+    int putc(int char, FILE *stream);
+    - Breakdown :-
+      - int -> return type
+      - putc -> function name
+      - int char -> The character to be written
+      - *File Stream -> point to the file object where the character will be written.
+  - Example :-
+```
+#include <stdio.h>
 
-fputc()
+int main() {
+    FILE *fp = fopen("output.txt", "w"); // open file in write mode
+    if (fp == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
 
-fputs()
+    putc('H', fp);   // writes 'H' to the file
+    putc('i', fp);   // writes 'i' to the file
+    putc('\n', fp);  // writes newline to the file
 
+    fclose(fp);
+    return 0;
+}
+```
+
+fputc() - It is a standard output function in C that writes a **single character** to a specified file stream. - It returns the character written as an `int`, or `EOF` if an error occurs.
+
+  - Syntax:-
+    int fputc(int char, FILE *stream);
+    - Breakdown :-
+      int -> return type
+      fputc -> function name
+      int char -> the character to be written
+      *File stream -> point to the file object where the character will be written. 
+  - Example
+```
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("output.txt", "w"); // open file in write mode
+    if (fp == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+
+    fputc('H', fp);   // writes 'H' to the file
+    fputc('e', fp);   // writes 'e' to the file
+    fputc('y', fp);   // writes 'y' to the file
+    fputc('\n', fp);  // writes newline to the file
+
+    fclose(fp);
+    return 0;
+}
+```
+fputs() - It is a standard output function in C that writes a **string of characters** to a specified file stream. - It returns a non-negative value on success, or `EOF` if an error occurs.
+  - Syntax :-
+    int fputs(const char *str, FILE *stream);
+    - Breakdown :-
+        - int -> return type
+        - fputs -> function name
+        - *const char str -> pointer to the string that will be written.
+        - *File stream -> point to the file object where the string will be written.
+  - Example :-
+```
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("output.txt", "w"); // open file in write mode
+    if (fp == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+
+    fputs("Hello, World!\n", fp);  // writes the string to the file
+    fputs("This is written using fputs().\n", fp);
+
+    fclose(fp);
+    return 0;
+}
+```
 ---
 
 ### Common Format Specifiers
