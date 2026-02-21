@@ -138,4 +138,64 @@ strcpy(s1.addr.city, "Patna");  // Access nested structure member
 s1.addr.pin = 800001;
 ```
 
+# Array of Structures in C
 
+## Definition
+- **Array of Structures** ka matlab hai ek hi type ke multiple structure variables ko ek array ke form mein store karna.  
+- Matlab agar tum ek `struct Student` banate ho, to uske multiple records ek saath ek array ke andar store kiye ja sakte hain.  
+- Ye ek tarika hai **multiple entities of same type** ko efficiently manage karne ka.
+
+---
+
+## Declaring & Initializing
+
+### 1. Declaration
+struct Student {
+    int roll;
+    char name[50];
+    float marks;
+};
+
+struct Student students[3];   // Array of 3 Student structures
+
+2. Initialization at Declaration
+struct Student students[3] = {
+    {101, "Rahul", 89.5},
+    {102, "Amit", 92.0},
+    {103, "Sneha", 95.5}
+};
+Yahan har row ek alag student record ko represent karti hai.
+
+3. Partial Initialization
+
+struct Student students[3] = {
+    {101, "Rahul"},   // marks default 0
+    {102, "Amit"},    // marks default 0
+    {103, "Sneha"}    // marks default 0
+};
+4. Runtime Initialization
+
+students[0].roll = 104;
+strcpy(students[0].name, "Karan");
+students[0].marks = 88.0;
+
+##  Accessing Elements in Array of Structures
+1. Using Index + Dot Operator
+printf("%d", students[0].roll);     // Access roll of first student
+printf("%s", students[1].name);     // Access name of second student
+
+2. Using Loops
+for(int i=0; i<3; i++) {
+    printf("%d %s %.2f\n", students[i].roll, students[i].name, students[i].marks);
+}
+
+3. Using Pointer to Array
+struct Student *ptr = students;
+printf("%d", (ptr+2)->roll);   // Access roll of third student
+
+4. Passing to Functions
+
+void printStudent(struct Student s) {
+    printf("%d %s %.2f\n", s.roll, s.name, s.marks);
+}
+printStudent(students[0]);   // Pass first student
