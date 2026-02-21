@@ -21,13 +21,13 @@ Ye simple macros hote hain jo ek constant value ya identifier ko represent karte
 
   - Syntax : #define MACRO_NAME value
   - Example :-
-        ```
-        #define PI 3.14
-        #define MAX 100
-        printf("Value of PI: %f\n", PI);   // Replace hoga 3.14 se
-        printf("Max limit: %d\n", MAX);   // Replace hoga 100 se
-        Explanation: Jab program compile hota hai to PI ko 3.14 aur MAX ko 100 se replace kar diya jata hai.
-        ```
+      
+    #define PI 3.14
+    #define MAX 100
+    printf("Value of PI: %f\n", PI);   // Replace hoga 3.14 se
+    printf("Max limit: %d\n", MAX);   // Replace hoga 100 se
+    
+    Explanation: Jab program compile hota hai to PI ko 3.14 aur MAX ko 100 se replace kar diya jata hai.
 #### 2) Function-like Macros 
 Ye macros ek function ki tarah behave karte hain, lekin actual function call nahi hote. Ye sirf text substitution karte hain aur arguments ko replace kar dete hain.
 
