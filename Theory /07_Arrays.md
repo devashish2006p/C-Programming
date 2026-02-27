@@ -92,9 +92,85 @@ Har dimension ke liye alag loop hota hai jo elements ko systematically access ka
   
   10. Reversing – Array ke elements ko ulta karna (last se first).
 
+# Indexing in Arrays
+Indexing ka mtlb hai array ka elements ko access karna using their position (index). Array ka elements continuous memory blocks ma store hote hai. Har element ka ek unique index number hota hai jo 0 sa start hota hai. Index ke through tum directly ksi bhi element ko access, modify ya traverse kar shkte ho. 
+## Ways of Indexing in arrays
+1. Direct Indexing - Direct indexing ek simple method hai jisme array ke element ko uske index number ke through directly access kiya jaata hai.
+- Example :-
+  ```
+  #include <stdio.h>
+    int main() {
+        int arr[5] = {10, 20, 30, 40, 50};
+        printf("%d\n", arr[0]); // Output: 10 (first element)
+        printf("%d\n", arr[3]); // Output: 40 (fourth element)
+        return 0;
+    }
+    ```
+2. Sequential Indexing - Sequential indexing ka matlab hai array ke elements ko ek sequence me (order-wise) access karna, usually loop ke through, jisme har index ko ek-ek karke traverse kiya jaata hai.
+   - Example :-
+     ```
+     #include <stdio.h>
+        int main() {
+            int arr[5] = {10, 20, 30, 40, 50};
+            for(int i=0; i<5; i++) {
+                printf("%d ", arr[i]);  
+            }
+            // Output: 10 20 30 40 50
+            return 0;
+        }
+        ```
+3. Pointer based Indexing - Pointer-based indexing ka matlab hai array ke elements ko pointer arithmetic ke through access karna, jisme array ka naam ek pointer hota hai aur *(arr + i) likh ke element milta hai.
+   - Example:-
+     ```
+     #include <stdio.h>
+        int main() {
+            int arr[5] = {10, 20, 30, 40, 50};
+            printf("%d\n", *(arr + 0)); // Output: 10 (first element)
+            printf("%d\n", *(arr + 3)); // Output: 40 (fourth element)
+            return 0;
+        }
+        ```
+4. Multi-dimensional Indexing - Multi-dimensional indexing ka matlab hai array ke elements ko multiple indices ke through access karna, jaise 2D array me row aur column index use hota hai (arr[i][j]).
+    - Example :-
+      ```
+      #include <stdio.h>
+        int main() {
+            int mat[3][3] = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+            };
+            printf("%d\n", mat[0][2]); // Output: 3 (first row, third column)
+            printf("%d\n", mat[2][1]); // Output: 8 (third row, second column)
+            return 0;
+        }
+        ```
+5. Pointer to Multi-diamensional Arrays - Pointer to multi-dimensional arrays ka matlab hai multi-dimensional array ke elements ko pointer arithmetic ke through access karna, jisme row aur column ke liye nested dereferencing (*(*(arr+i)+j)) use hota hai.
+    - Example :-
+      ```
+      #include <stdio.h>
+        int main() {
+            int mat[2][2] = {
+                {1, 2},
+                {3, 4}
+            };
+            // Normal indexing
+            printf("%d\n", mat[1][0]);   // Output: 3
+            // Pointer-based indexing
+            printf("%d\n", *(*(mat + 1) + 0)); // Output: 3
+            return 0;
+        }
+        ```
 
+# Traversal in Arrays
+Traversal ka matlab hai array ke saare elements ko ek-ek karke sequentially access karna, usually loop ke through, taaki unpe operation perform kiya ja sake (jaise print, search, update).
 
-
+## Types of Traversal 
+1. Forward Traversal - 
+2. Backward Traversal
+3. Selective Traversal
+4. Conditional Traversal
+5. Pointer based Traversal
 
 
 
