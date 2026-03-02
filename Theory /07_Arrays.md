@@ -165,13 +165,6 @@ Indexing ka mtlb hai array ka elements ko access karna using their position (ind
 # Traversal in Arrays
 Traversal ka matlab hai array ke saare elements ko ek-ek karke sequentially access karna, usually loop ke through, taaki unpe operation perform kiya ja sake (jaise print, search, update).
 
-## Types of Traversal 
-1. Forward Traversal - 
-2. Backward Traversal
-3. Selective Traversal
-4. Conditional Traversal
-5. Pointer based Traversal
-
 
 
 
