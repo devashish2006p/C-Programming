@@ -14,3 +14,13 @@ Argument Vector ek array of strings hai jo command line par diye gaye har argume
 int main(int argc, char *argv[]) (1st way)
 
 int main(int argc, char **argv) (2nd way) 
+
+# Forms of main() function
+1. int main(void)
+   - Is form ma koi command line argument nahi hota.
+   - void ka mtlb program koi argument receive nahi krega.
+2. int main(int argc, char *argc[])
+   - Ya form command line arguments lene ka lia use hota hai.
+   - *argc* = argument count
+   - *argc* = argument vector (string only)
+
