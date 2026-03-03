@@ -70,28 +70,66 @@ Har dimension ke liye alag loop hota hai jo elements ko systematically access ka
     array_name: Name of the array
     size1, size2, size3 : Dimensions sizes, for example rows, columns and depth.
 
-# Operations on Array 
+# Array Algorithm Categories 
+1. **Traversal**  
+Array ke har element ko systematically visit karna taaki uspar koi operation perform kiya ja sake.
 
-  1. Traversal – Har element ko sequentially access karna.
-  
-  2. Insertion – Kisi index par naya value dalna.
-  
-  3. Deletion – Kisi element ko remove ya overwrite karna.
-  
-  4. Searching – Kisi specific element ko find karna.
-  
-  5. Sorting – Elements ko ascending/descending order mein arrange karna.
-  
-  6. Merging – Do arrays ko combine karna.
-  
-  7. Splitting – Ek array ko multiple arrays mein todna.
-  
-  8. Updating/Modification – Kisi element ki value change karna.
-  
-  9. Copying – Ek array ke elements ko dusre array mein copy karna.
-  
-  10. Reversing – Array ke elements ko ulta karna (last se first).
+2. **Searching**  
+Array me kisi specific value ya condition ko satisfy karne wale element ko dhoondhne ka algorithm.
 
+3. **Sorting**  
+Array ke elements ko kisi defined order (ascending/descending) me arrange karne ka algorithm.
+
+4. **Insert/Delete**  
+Array me naya element add karne ya existing element remove karne ka process with proper shifting.
+
+5. **Updating**  
+Array ke kisi existing element ki value ko modify ya replace karne ka operation.
+
+6. **Aggregation**  
+Array ke multiple elements ko combine karke ek single result nikalna (jaise sum, max, average).
+
+7. **Rearrangement**  
+Array ke elements ka order ya position change karna bina unki value badle.
+
+8. **Subarray Problems**  
+Continuous elements ke subset par based problems solve karne wale algorithms.
+
+9. **Prefix/Suffix Techniques**  
+Array me cumulative left-to-right (prefix) ya right-to-left (suffix) computation ka use karne wale algorithms.
+
+10. **Sliding Window**  
+Fixed ya variable size ke continuous segment ko efficiently move karke problem solve karne ka technique.
+
+11. **Two Pointers**  
+Array me do indices ko controlled direction me move karke optimized solution nikalne ka approach.
+
+12. **Divide & Conquer**  
+Array ko chhote parts me todkar recursively solve karke final result combine karne ka method.
+
+13. **Greedy Based on Arrays**  
+Har step par locally best decision lekar globally optimal solution paane ki strategy.
+
+14. **Dynamic Programming on Arrays**  
+Overlapping subproblems aur stored results ka use karke optimized solution banane ka approach.
+
+15. **Bit Manipulation on Arrays**  
+Array elements par bit-level operations (AND, OR, XOR, shift) ka use karke problem solve karna.
+
+16. **Matrix/2D Operations**  
+Two-dimensional array (matrix) par arithmetic ya traversal based algorithms apply karna.
+
+17. **Hashing with Arrays**  
+Auxiliary array ya hash structure ka use karke fast lookup aur frequency management karna.
+
+18. **Frequency Based**  
+Array me elements ke occurrence count par based logic implement karna.
+
+19. **Partitioning**  
+Array ko specific condition ke basis par alag-alag sections me divide karna.
+
+20. **In-Place Transformation**  
+Extra memory use kiye bina directly original array me modification karne ka algorithm.
 # Indexing in Arrays
 Indexing ka mtlb hai array ka elements ko access karna using their position (index). Array ka elements continuous memory blocks ma store hote hai. Har element ka ek unique index number hota hai jo 0 sa start hota hai. Index ke through tum directly ksi bhi element ko access, modify ya traverse kar shkte ho. 
 ## Ways of Indexing in arrays
