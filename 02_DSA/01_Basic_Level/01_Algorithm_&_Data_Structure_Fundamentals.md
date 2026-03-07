@@ -54,5 +54,11 @@ Pseudocode writing ek language-independent way hai algorithm ko clearly aur step
 
 ---
 
-# Flowchart 
+# 3. Flowchart 
 Flowchart ek diagrammatic representation hota hai jisme kisi process, algorithm, ya program ke steps ko symbols aur arrows ke through visually dikhaya jaata hai, taki logic aur flow easily samajh me aaye.
+
+## 3.1 Symbols & Shapes of Flowchart
+| Symbol    | Shape     | Use    |
+__________________________________
+| Terminator | Oval/Ellipse    | Start ya End point     | 
+| Process    | Rectange        | Ksi bhi action ya operation ko represent karta hai    | 
