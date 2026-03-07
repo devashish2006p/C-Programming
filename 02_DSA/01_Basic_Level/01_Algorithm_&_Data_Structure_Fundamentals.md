@@ -58,7 +58,13 @@ Pseudocode writing ek language-independent way hai algorithm ko clearly aur step
 Flowchart ek diagrammatic representation hota hai jisme kisi process, algorithm, ya program ke steps ko symbols aur arrows ke through visually dikhaya jaata hai, taki logic aur flow easily samajh me aaye.
 
 ## 3.1 Symbols & Shapes of Flowchart
-| Symbol    | Shape     | Use    |
-__________________________________
-| Terminator | Oval/Ellipse    | Start ya End point     | 
-| Process    | Rectange        | Ksi bhi action ya operation ko represent karta hai    | 
+| Symbol                              | Shape                       | Use                                                     |
+| ----------------------------------- | --------------------------- | ------------------------------------------------------- |
+| **Terminator**                      | Oval / Ellipse              | Start ya End point                                      |
+| **Process**                         | Rectangle                   | Kisi bhi action ya operation ko represent karta hai     |
+| **Decision**                        | Diamond                     | Yes/No ya condition-based branching                     |
+| **Input / Output**                  | Parallelogram               | User input ya system output                             |
+| **Connector**                       | Small Circle                | Flow ko continue karne ke liye (page ya sub-process me) |
+| **Predefined Process / Subroutine** | Rectangle with double lines | Already defined process ko call karna                   |
+| **Document**                        | Rectangle with wavy bottom  | Document output ya report                               |
+| **Delay / Storage**                 | Half-ellipse / Cylinder     | Delay, storage, database representation                 |
