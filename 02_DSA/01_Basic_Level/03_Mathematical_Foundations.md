@@ -52,13 +52,16 @@ Summation notation ek mathematical shorthand hai jisshe bahut sare numbers ko ad
 ## 3.2 Basic Summation Formulas
 1. Constant Sum : Ishka mtlb hai ki agr ksi loop ya algorithm ma har iteration ma same amount ka work ho to total work iterations ki count ka proportional hota hai. Mtlb agr loop n baar chalta hai aur har bar same kaam karta hai to total kaam n times hoga. 
 - Example :-
+  ```
   for(int i = 1; i <=n; i++){
   printf("Hello"); 
   }
+  ```
   - Explanation :- 
     - loop n times run krega
     - har iteration ma same kaam ho rha hai (print)
     - To total operation n hua.
+  
 - Ishka use mainly single loops analyze karne ma
 - Simple algorithms ki time complexity nikalne ma
 - Iteration based algorithms ma hota hai. 
@@ -66,16 +69,20 @@ Summation notation ek mathematical shorthand hai jisshe bahut sare numbers ko ad
 2. Sum of ones : Ishka mtlb hai ki agr algorithm ya loop ma har iteration ek simple operation kare, jishka cost 1 mana jata hai, to total iterations ka count ka equal hota hai. Mtlb agr loop n baar chalta hai aur har bar ek unit operation karta hai to total operations n hote hai.
 
 - Example :-
+  ```
   for(int i = 1; i <= n; i++)
   {
     x++;
+
   }
+  ```
   - Explanation:
     - loop n times run karega
     - har iteration me 1 operation ho raha hai
    
 3. Sum of Natural Numbers : Ishka mtlb hai jab ksi algorithm ya loop ma work har iteration ma gradually badhta hai (1, 2, 3, 4......pattern ma). Mtlb first iteration 1 operation, second iteration 2 operations, third iteration 3 operations.
-   - Example :- 
+   - Example :-
+   ```
    for(int i = 1; i <= n; i++)
    {
       for(int j = 1; j <= i; j++)
@@ -83,47 +90,40 @@ Summation notation ek mathematical shorthand hai jisshe bahut sare numbers ko ad
           printf("Hi");
       }
     }
+    ```
+4. Sum of squares - Sum of Squares ka matlab hai ki kisi algorithm ya nested loops me work har iteration me i² ke pattern me badh raha ho.
 
-5. Sum of squares
+5. Sum of Cubes - Sum of Cubes ka matlab hai ki kisi algorithm ya nested loops me work har iteration me i³ ke pattern me badh raha ho.
 
+6. Arithmetic series - Arithmetic Series ka matlab hai algorithm ya loop me work har iteration me ek fixed amount se increase ya decrease hota ho.
 
-6. Sum of Cubes
+7. Geometric series - Geometric Series ka matlab hai algorithm ya loop me work har iteration me ek fixed ratio se multiply ho raha ho.
 
+8. geomatric series (infinite case) - Infinite geometric series tab hoti hai jab algorithm me work har iteration me ek fixed ratio se multiply ho raha ho aur iterations infinite tak continue ho sakti ho, lekin ratio 0 < r < 1 ho jisse total work finite rahe.
 
-7. Arithmetic series
+9. Logarithmic sum - Logarithmic Sum ka matlab hai algorithm me work har iteration me log(i) ke pattern me badh raha ho.
 
+10. Harmonic Series - Harmonic Series ka matlab hai ki algorithm me work har iteration me 1/i ke pattern me kam hota hai.
 
-8. Geometric series
+11. Power of Two sum - Power of Two Sum ka matlab hai ki algorithm me work har iteration me 2 ke powers ke pattern me badh raha ho.
 
+12. Linear Combinatoin Rule - Linear Combination Rule ka matlab hai ki agar hum ek ya ek se zyada summations ko ek saath multiply ya add karke likhte hain, to hum unko algebraically separate ya combine kar sakte hain.
 
-9. geomatric series (infinite case)
+13. polynomial bound - Polynomial Bound ka matlab hai ki kisi algorithm ka work ya summation function n ke power ke form me bounded ho.
 
-
-10. Logarithmic sum
-
-
-11. Harmonic Series
-
-
-12. Power of Two sum
-
-
-13. Linear Combinatoin Rule
-
-
-14. Log base -2 sum
-
-
-15. polynomial bound
-
-
-16. Harmonic with constant 
-
-
+14. Harmonic with constant - Harmonic with Constant ka matlab hai ki algorithm me har iteration ka work constant + 1/i ke pattern me ho, jisse total work ~ O(n) (linear) hota hai, aur logarithmic part small contribution deta hai.
 
 ## 3.3 Loop ko summation ma convert karna 
 
 ## 3.4 Summation simplify karna 
 
 ## 3.5 Time complexity derive karna 
+
+# 4. Recurrance relations
+# 5. Recursion Trees
+# 6. Master Theorem
+# 7. Probability Basics 
+# 8. Combinatorics basics 
+# 9. Moduler Arithmetic 
+
 ​
