@@ -3,6 +3,13 @@ Bit manipulation ka matlab hota hai data ke individual bits (0 aur 1) ko directl
 
 # Bitwise Operators 
 1. *&* (Bitwise AND) - Bit 1 tabhi hoga jab dono bits 1 ho.
+- Operations through AND Operator
+  1) Check Bit - Check Bit ka matlab hai dekhna ki kisi number ka particular bit (kth position) set hai (1) ya unset (0). 
+ 
+  2) Masking/Extract Specific Bits - Masking ka matlab hai ek number ke kuch specific bits ko isolate karna aur baaki bits ko ignore karna.
+ 
+  3) Intersection of Two Bit Patters - Intersection ka matlab hai do numbers ke common set bits nikalna.
+
 2. *|* (Bitwise OR) - Bit 1 hoga agr ksi ek me bhi 1 ho.
 3. *^* (Bitwise XOR) - Different bits ho to 1.
 4. *~* (Bitwise NOT) - Bit flip karta hai.
