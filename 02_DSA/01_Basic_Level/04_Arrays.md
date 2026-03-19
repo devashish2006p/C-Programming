@@ -82,3 +82,11 @@ Deletion ka matlab hai array me kisi specific position ke element ko remove (del
     }
   ```
 - *Note : Array ma deletion ka main kaam overwrite hi hota hai, yani next elements ko left shift karke previous position par copy (overwrite) kar diya jata hai. Deletion in Arry = Left shift + overwrite.*
+
+# 6. Searching in Array 
+Array me searching ka matlab hota hai kisi specific element (value) ko find karna — ki wo array me exist karta hai ya nahi, aur agar karta hai to kis position (index) par hai.
+
+## 6.1 Core Types of Searching in Array 
+1. Linear Search - Linear search ek simple searching technique hai jisme hum array ke har element ko starting se end tak ek-ek karke check karte hain, jab tak required element mil na jaye ya pura array khatam na ho jaye.
+
+2. Binary Search - Binary search ek efficient searching technique hai jisme hum sorted array ko use karke element ko find karte hain by repeatedly array ko half (aadha-aadha) me divide karte hue.
