@@ -54,7 +54,7 @@ System Architecture ek aisa blueprint ya design hai jo batata hai ki computer ka
 
 ## 5.2 Bit Manipulation Operations
 1. Set bit - Set bit operation kisi specific position par present bit ko 1 bana deta hai, chahe woh pehle 0 ho ya 1. Ishko krne ka lia ksi K-th position ki bit ko 1 banane ka lia hum OR operation use karte hai. 
-- Formula : 
+- Formula : x = x | (1 << k);
 2. Clear bit
 
 3. Toggle bit
