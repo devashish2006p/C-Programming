@@ -1,25 +1,27 @@
-# Intro 
+# 1. Intro 
 Bit manipulation ka matlab hota hai data ke individual bits (0 aur 1) ko directly control, modify, set, clear ya toggle karna.
 
-# Bitwise Operators 
-1. *&* (Bitwise AND) - Bit 1 tabhi hoga jab dono bits 1 ho.
-- Operations through AND Operator
-  1) Check Bit - Check Bit ka matlab hai dekhna ki kisi number ka particular bit (kth position) set hai (1) ya unset (0). 
- 
-  2) Masking/Extract Specific Bits - Masking ka matlab hai ek number ke kuch specific bits ko isolate karna aur baaki bits ko ignore karna.
- 
-  3) Intersection of Two Bit Patters - Intersection ka matlab hai do numbers ke common set bits nikalna.
+# 2. Bitwise Operators 
+1. AND (&) - Ya do bits ko compare karke tabhi 1 return karta hai jab dono bits 1 ho warna 0 deta hai.
+2. OR (|) - Ya do bits ma se ksi bhi ek bit ke 1 hone par 1 return karta hai, warna 0 deta hai.
+3. XOR (^) - Ya tab 1 return karta hai jab dono bits alag ho (ek 0 aur ek 1) aur same hone par 0 hota hai.
+4. NOT (~) - Ya har bit ko invert karta hai, yani 1 ko 0 aur 0 ko 1 bana deta hai.
+5. Left Shift (<<) - Ya bits ko left shift karta hai jisshe number ka value multiply hota hai, generally 2 sa.
+6. Right Shift (>>) - Ya bits ko right side shift karta hai jisshe number ka value divide hota hai generally 2 sa.
 
-2. *|* (Bitwise OR) - Bit 1 hoga agr ksi ek me bhi 1 ho.
-3. *^* (Bitwise XOR) - Different bits ho to 1.
-4. *~* (Bitwise NOT) - Bit flip karta hai.
-5. *<<* (Left Shift) - Bits ko left shift karta hai.
-6. *>>* (Right Shift) - Bits ko right shift karta hai.
-
-# Bit Manipulation Algorithms 
-1. Bit Masking Algorithms - Bit masking algorithms wo techniques hoti hain jinme binary number ke specific bits ko set, clear, toggle ya check karne ke liye mask (special bit pattern) use kiya jata hai.
-2. Bit Counting Algorithms - Bit Counting Algorithms wo algorithms hote hain jo kisi binary number me kitne bits 1 (set bits) hain ya kabhi-kabhi 0 hain, unki ginti (count) nikalte hain.
-3. Bitwise Arithmetic Tricks - Bitwise arithmetic tricks wo techniques hoti hain jisme arithmetic operations (jaise multiply, divide, absolute value, power check, etc.) ko normal mathematical operators ki jagah bitwise operators (<<, >>, &, ^, etc.) se efficiently perform kiya jata hai.
-4. Bitwise Searching/Testing - Bitwise searching/testing wo techniques hoti hain jisme binary number ke specific bits ko search, detect, ya test kiya jata hai — jaise kisi particular position par bit 1 hai ya 0, first set bit ka position kya hai, ya rightmost set bit kaun sa hai.
-5. Bitwise Optimization Algorithms - Bitwise optimization algorithms wo techniques hoti hain jisme bit-level operations ka use karke memory usage kam kiya jata hai, performance improve ki jati hai, ya data ko compact form me store/process kiya jata hai.
-6. Bitwise Cryptographic & Hashing Algorithms - Bitwise cryptographic & hashing algorithms wo algorithms hote hain jo data ko secure (encrypt) karne ya unique hash generate karne ke liye bit-level operations (jaise XOR, shifts, rotations, mixing) ka use karte hain.
+# 3. Bit Manipulation Operations
+1. Set bit - Set bit operation kisi specific position par present bit ko 1 bana deta hai, chahe woh pehle 0 ho ya 1. Ishko krne ka lia ksi K-th position ki bit ko 1 banane ka lia hum OR operation use karte hai. 
+- Formula : x = x | (1 << k);
+  
+2. Clear bit - Ya ek operation hai jisme ksi binary number ka ander ek specific position ki bit ko 0 me badal diya jata hai, chahe wo pehle 1 ho ya 0, aur baki sab bits ko unchanged rakha jata hai. 
+- Formula : x = x & ~(1 << k);
+  
+3. Toggle bit - Ya ek operation hai jisme ksi specific position ki bit ko ushke opposite me badal diya jata hai, yani 0 ko 1 aur 1 ko 0. 
+- Formula : x = x ^ (1 << k);
+  
+4. Check bit - Ya ek operation hai jisme ksi binary number ka ander ek specific position ki bit 1 hai ya 0, ya pata lagaya jata hai bina original value ko change kiye. 
+- Formula : x & (1 << k)
+  
+5. Get bit - Ya ek operation hai jisme ksi binary number ka ander ek specific position ki bit ka exact value nikal kar return kiya jata hai, bina original number ko change kiye. 
+- Formula : bit = (x >> k) & 1
+  
