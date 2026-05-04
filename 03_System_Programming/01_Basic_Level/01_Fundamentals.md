@@ -55,30 +55,16 @@ System Architecture ek aisa blueprint ya design hai jo batata hai ki computer ka
 ## 5.2 Bit Manipulation Operations
 1. Set bit - Set bit operation kisi specific position par present bit ko 1 bana deta hai, chahe woh pehle 0 ho ya 1. Ishko krne ka lia ksi K-th position ki bit ko 1 banane ka lia hum OR operation use karte hai. 
 - Formula : x = x | (1 << k);
-2. Clear bit
-
-3. Toggle bit
-
-4. Check bit
-
-5. Get bit
-
-6. Left shift
-
-7. Right shift
-
-8. Even/Odd check
-
-9. Power of 2 check
-
-10. Remove Rightmost Set bit
-
-11. Get rightmost set bit
-
-12. Count set bits
-
-13. Clear all bits
-
-14. Set all bits
-
-15. Toggle all bits
+  
+2. Clear bit - Ya ek operation hai jisme ksi binary number ka ander ek specific position ki bit ko 0 me badal diya jata hai, chahe wo pehle 1 ho ya 0, aur baki sab bits ko unchanged rakha jata hai. 
+- Formula : x = x & ~(1 << k);
+  
+3. Toggle bit - Ya ek operation hai jisme ksi specific position ki bit ko ushke opposite me badal diya jata hai, yani 0 ko 1 aur 1 ko 0. 
+- Formula : x = x ^ (1 << k);
+  
+4. Check bit - Ya ek operation hai jisme ksi binary number ka ander ek specific position ki bit 1 hai ya 0, ya pata lagaya jata hai bina original value ko change kiye. 
+- Formula : x & (1 << k)
+  
+5. Get bit - Ya ek operation hai jisme ksi binary number ka ander ek specific position ki bit ka exact value nikal kar return kiya jata hai, bina original number ko change kiye. 
+- Formula : bit = (x >> k) & 1
+  
