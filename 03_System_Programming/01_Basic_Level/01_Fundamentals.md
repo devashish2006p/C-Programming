@@ -68,3 +68,4 @@ System Architecture ek aisa blueprint ya design hai jo batata hai ki computer ka
 5. Get bit - Ya ek operation hai jisme ksi binary number ka ander ek specific position ki bit ka exact value nikal kar return kiya jata hai, bina original number ko change kiye. 
 - Formula : bit = (x >> k) & 1
   
+ 
