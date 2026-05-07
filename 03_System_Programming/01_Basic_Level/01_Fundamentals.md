@@ -49,10 +49,71 @@ System Architecture ek aisa blueprint ya design hai jo batata hai ki computer ka
 - **Process**: Ya ek active, dynamic aur independent execution unit hota hai jo tab create hota hai jab ksi program ko OS execute karta hai aur iske pass apna alag memory space, CPU state, execution context aur system resources hote hai.
 
 ## 5.2 Compilation Process 
-1. Starting Point - Is stage par hum ek .c file likhte hai jishme c code hota hai. Ushko terminal ya compiler ka command sa run karte hai.
-2. Pre-processing - Is stage par **#include** ka jagha par actual function declaration paste kia jata hai. **define** ka jagha unke values ko paste kia jata hai. Conditional Compilation v yahi execute hoti hai. Aur result hota hai pure source code ko expended version milta hai aur hmare .c file ko .i ma change kar dia jata hai.
-3. Compilation - Compiler pehle syntax check karta hai and pure code ko aache sa check karta hai. Agr koi error hoti hai to isi step par rok dia jata hai. Agr sub sahi hai to compiler code ko assembly language ma convert karta hai. Aur .i file ko .s ma convert kar dia jata hai.
-4. Assembling - Assembly code ko convert kia jata hai binary (machine code) ma. Result hota hai object file jo CPU ke lia redable hota hai.
-5. Linking - Abhi tak file ke ander likhe hue code binary ma convert ho chuka hota hai, lekin jo functions user na use kiya the wo binary ma change nahi hue hota hai, liner un fucnction ka real binary code ko system library sa fetch karta hai, aur sab mila kar ek ready to run executable file banata hai. Aur .o file ko .exe/a.out file ma change kar dia jata hai. 
-
- 
+### 1. Source File Creation 
+1) User *.c* file likhta hai jisme high level c instructions hoti hai.
+2) Ya file disk par stored hoti hai as plain text (ASCII/UTF-8).
+### 2. Pre-processing stage
+3) Compiler ka preprocessor source file ko read karta hai.
+4) Sbse pehle comments remove kiye jate hai.
+5) *#include* directives ko replace karke header files ka content inline paste kiya jata hai.
+6) *#define* macros ko unki values sa replace kiya jata hai.
+7) Function-like macros bhi expand kiye jate hai. 
+8) *#undef* macros ko hata diya jata hai.
+9) Conditional compilation *(#ifdef, #ifndef, #if)* evaluate hoti hai aur unnecessary code remove hota hai.
+10) Header guards resolve hote hai.
+11) Result ek expended source file hota hai jishe *.i* file kehte hai. 
+### 3. Compilation Stage 
+- **Frontend (Analysis Phase)**
+- 12) Preprocessed code ko compiler frontend read karta hai.
+  13) Lexical Analysis me code ko tokens ma tod diya jata hai (Keywords, identifiers, operators).
+  14) Syntax Analysis (parsing) ma tokens sa parse tree/AST (Abstract Syntax Tree) bnaya jata hai.
+  15) Semantic Analysis me type checking, variable declaration checking, scope resolution hota hai.
+  16) Errors (Syntax/semantic) is stage par detect hote hai. 
+- **Middle-end (Optimization Phase)**
+- 17) AST ko intermediate representation (IR) ma convert kiya jata hai.
+  18) Compiler optimizations apply karta hai.
+      - Constant folding
+      - dead code elimination
+      - loop optimization
+      - inline expansion
+   19) Optimizaed IR generate hota hai. 
+- **Backend (Code Generation Phase)**
+- 20) IR ko target architecture ka according assembly code ma convert kiya jata hai.
+  21) Register allocation hota hai (Variables ko CPU registers assign hote hai).
+  22) Instruction selection hota hai (kaunsa machine instruction use hoga).
+  23) Output : *.s* file ma milta hai. 
+### 4. Assembling Stage
+24) Assembler assembly code ko read karta hai.
+25) Har assembly instruction ko corresponding machine opcode ma convert karta hai.
+26) Symbole table generate hoti hai.
+27) Relocation entries create hoti hai (addresses abhi final nhi hota).
+28) Output ek relocatable object file (.o) hota hai. 
+### 5. Linking Stage 
+- **Input**
+- 29) Linker Multiple Object files + libraries ko input me leta hai. 
+- **Symbol Resolution**
+- 30) Undefined symbols (jaisa printf()) ko resolve kiya jata hai.
+  31) Libraris (static *.a* ya shared *.so*) sa required code link hota hai. 
+- **Relocation**
+- 32) Memory addresses assign kiya jata hai (final address binding).
+  33) Code aur data section ko proper addresses milte hai. 
+- **Section Merging**
+- 34) Multiple object files ka sections (text, data, bss) combine kiya jata hai. 
+- **Static Vs Dynamic Linking**
+- 35) Static linking : Pure library code executable me copy hota hai.
+  36) Dynamic Linking : Sirf reference rehta hai, runtime par laod hota hai. 
+- **Output Generation**
+- 37) Final executable file ban jata hai.
+### 6. Executable File Internals 
+38) Executable me ELF header hota hai.
+39) Entry point define hota hai.
+40) Sections aur segments defined hote hai.
+    - *.text*
+    - *.data*
+    - *.bss*
+41) Program headers loader ko btata hai kya load karna hai. 
+### 7. Runtime Linking 
+42) Agr dynamic linking hai to loader runtime par shared libraries load karta hai.
+43) GOT (Global Offset Table) aur PLT (Procedure Linkage Table) use hote hai. 
+### 8. Final Output
+44) Ab executable fully ready hai run hone ka lia. 
