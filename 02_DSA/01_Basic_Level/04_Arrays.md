@@ -37,26 +37,33 @@ Traversal ka matlab hai array ke sabhi elements ko ek-ek karke access ya visit k
   ```
 
 # 4. Insertion 
-Insertion ka matlab hai array me kisi new element ko kisi specific position par add karna.
-#include <stdio.h>
-- Example :-
-    ```
-    int main() {
-        int arr[6] = {10,20,30,40,50};
-        int pos = 2;
-        int value = 25;
-    
-        for(int i = 5; i > pos; i--) {
-            arr[i] = arr[i-1];
-        }
-    
-        arr[pos] = value;
-    
-        for(int i = 0; i < 6; i++) {
-            printf("%d ", arr[i]);
-        }
-    }
-    ```
+## 4.1 About
+Insertion ka matlab hai array me kisi new element ko kisi specific position par add karna. Ishka objective existing data structure ma naya lement add karna hota hai while maintain the strucutre/order. 
+
+## 4.2 Working Mechanism 
+1. Insert karne ka lia target position choose ki jati hai.
+2. Check kiya jata hai ki array me free space hai ya nahi.
+3. Target position ka baad wale elements ko right shift kiya jata hai.
+4. New element ko target position par store kiya jata hai.
+5. Array ka logical size increase ho jata hai.
+
+## 4.3 Internal Decision Logic
+1. System decide karta hai insertion kis position par hoga.
+2. Check hota hai ki valid index hai ya nahi.
+3. Check hota hai ki array full to nahi hai.
+4. Decide hota hai kitne elements shift karne parenge.
+5. Elements ko last se reverse order ma shift kiya jata hai taki data overwrite na ho.
+6. Empty bani position ma new element insert kar diya jata hai.
+
+## 4.4 Time Complexity Analysis
+- Best Case : O(1)
+- Average Case : O(n)
+- Worst Case : O(n)
+
+## 4.5 Space Complexity Analysis
+- Fixed Array : O(1)
+- Input dependent/dynamic sized array : O(n) 
+
 - *Note : Array ma insertion tabhi possible hota hai jab array ma kam sa kam ek khali jagha ho, warna new element add nhi kiya ja shkta hai. Full array ma insertion nhi hoga jab tak size increase na kiya jaye.*
 
 # 5. Deletion 
