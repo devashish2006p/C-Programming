@@ -67,27 +67,21 @@ Insertion ka matlab hai array me kisi new element ko kisi specific position par 
 - *Note : Array ma insertion tabhi possible hota hai jab array ma kam sa kam ek khali jagha ho, warna new element add nhi kiya ja shkta hai. Full array ma insertion nhi hoga jab tak size increase na kiya jaye.*
 
 # 5. Deletion 
-Deletion ka matlab hai array me kisi specific position ke element ko remove (delete) karna aur uske baad wale elements ko left shift kar dena.
-- Example :-
-  ```
-  #include <stdio.h>
-
-    int main() {
-    
-        int arr[5] = {10,20,30,40,50};
-        int pos = 2;   // jis index ka element delete karna hai
-    
-        // Left shift karenge
-        for(int i = pos; i < 4; i++) {
-            arr[i] = arr[i+1];
-        }
-    
-        // Array print
-        for(int i = 0; i < 4; i++) {
-            printf("%d ", arr[i]);
-        }
-    }
-  ```
+Ishka mtlb hota hai array ma se ksi specific position ka element remove karna aur baki elements ko shift karke array ka order maintain rakhna. 
+- **Working Mechanism**
+  - 1. User delete karne ka lia ek position specify karta hai.
+    2. Us position ka element identify kiya jata hai.
+    3. Us element ko logically remove kiya jata hai (overwrite/skip). 
+    4. Ushke baad ka sare elements ko left side shift kiya jata hai.
+    5. Last position ko empty ya invalid mark kiya jata hai.
+    6. Array ka logical size 1 reduce ho jata hai.
+- **Internal Decision Logic**
+  - 1. System check karta hai ki given index valid hai ya nahi.
+    2. Check hota hai ki array empty to nahi hai.
+    3. Decide hota hai ki kaunsa element delete karna hai.
+    4. Shift operation calculate hota hai (kitne elements left move honge).
+    5. Elements ko left shift karke gap fill kiya jata hai.
+    6. Last index ko update karke size decrement kar diya jata hai. 
 - *Note : Array ma deletion ka main kaam overwrite hi hota hai, yani next elements ko left shift karke previous position par copy (overwrite) kar diya jata hai. Deletion in Arry = Left shift + overwrite.*
 
 # 6. Searching in Array 
