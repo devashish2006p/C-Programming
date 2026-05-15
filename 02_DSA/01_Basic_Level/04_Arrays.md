@@ -85,9 +85,25 @@ Ishka mtlb hota hai array ma se ksi specific position ka element remove karna au
 - *Note : Array ma deletion ka main kaam overwrite hi hota hai, yani next elements ko left shift karke previous position par copy (overwrite) kar diya jata hai. Deletion in Arry = Left shift + overwrite.*
 
 # 6. Searching in Array 
-Array me searching ka matlab hota hai kisi specific element (value) ko find karna — ki wo array me exist karta hai ya nahi, aur agar karta hai to kis position (index) par hai.
+Array me kisi specific element ko find karna aur uski position/index locate karna.
 
 ## 6.1 Core Types of Searching in Array 
 1. Linear Search - Linear search ek simple searching technique hai jisme hum array ke har element ko starting se end tak ek-ek karke check karte hain, jab tak required element mil na jaye ya pura array khatam na ho jaye.
+   - **Internal Mechanism**
+   - 1. Search operation array ka first index sa start hota hai.
+     2. Target value ko current element ka sath compare kiya jata hai.
+     3. Agr value match ho jaye to element found declare kar diya jata hai.
+     4. Agr match na mile to next index par move kiya jata hai.
+     5. Ya process sequentially last element tak continue hota hai.
+     6. Agr pura array traverse hone ka baad bhi match na mile to element not found return kiya jata hai. 
 
-2. Binary Search - Binary search ek efficient searching technique hai jisme hum sorted array ko use karke element ko find karte hain by repeatedly array ko half (aadha-aadha) me divide karte hue.
+3. Binary Search - Binary search ek efficient searching technique hai jisme hum sorted array ko use karke element ko find karte hain by repeatedly array ko half (aadha-aadha) me divide karte hue.
+   - **Internal Mechanism**
+   - 1. Binary search start hone sa pehle array sorted hona cahiya.
+     2. Search operation array ka middle element ko select karta hai.
+     3. Middle element ko target value ka sath compare kiya jata hai.
+     4. Agr middle value target ka equal ho to element found declare kar diya jata hai.
+     5. Agr target middle value sa chota ho to left half select kiya jata hai.
+     6. Agr target middle value sa bada ho to right half select kiya jata hai.
+     7. Har step ma searching range half hoti jati hai.
+     8. Ya process tab tak continue hota hai jab tak element mil na jaye ya search range khatam na ho jaye. 
