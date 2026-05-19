@@ -111,5 +111,10 @@ Array me kisi specific element ko find karna aur uski position/index locate karn
 # 7. Sorting
 Sorting ek process hai jisme array ya data ka elements ko ksi specific order (ascending ya decending) ma arrange kiya jata hai. 
 - **Types of Sorting**
-  ## 7.1
-  ## 7.2 
+  ## 7.1 Bubble Sort
+  Bubble Sort ek simple comparison-based sorting algorithm hai jisme array ke adjacent (paas-paas) elements ko repeatedly compare kiya jata hai, aur agar unka order galat ho to unhe swap kar diya jata hai, jisse har pass ke baad bada element bubble ki tarah dheere-dheere array ke end tak pahunch jata hai, aur ye process tab tak repeat hota hai jab tak pura array sorted na ho jaye.
+  ## 7.2 Selection Sort
+  Selection Sort ek simple sorting algorithm hai jisme array me se har step par minimum (ya maximum) element ko dhoondh kar usko uski correct position par swap kiya jata hai, aur ye process repeatedly baaki unsorted part ke saath chalta rehta hai jab tak pura array sorted na ho jaye.
+  ## 7.3 Insertion Sort
+  ## 7.4 Merge Sort
+  ## 7.5 Quick Sort
