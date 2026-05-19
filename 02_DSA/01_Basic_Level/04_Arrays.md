@@ -107,3 +107,9 @@ Array me kisi specific element ko find karna aur uski position/index locate karn
      6. Agr target middle value sa bada ho to right half select kiya jata hai.
      7. Har step ma searching range half hoti jati hai.
      8. Ya process tab tak continue hota hai jab tak element mil na jaye ya search range khatam na ho jaye. 
+
+# 7. Sorting
+Sorting ek process hai jisme array ya data ka elements ko ksi specific order (ascending ya decending) ma arrange kiya jata hai. 
+- **Types of Sorting**
+  ## 7.1
+  ## 7.2 
