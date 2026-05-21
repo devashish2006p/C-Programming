@@ -117,5 +117,7 @@ Sorting ek process hai jisme array ya data ka elements ko ksi specific order (as
   Selection Sort ek simple sorting algorithm hai jisme array me se har step par minimum (ya maximum) element ko dhoondh kar usko uski correct position par swap kiya jata hai, aur ye process repeatedly baaki unsorted part ke saath chalta rehta hai jab tak pura array sorted na ho jaye.
   
   ## 7.3 Insertion Sort (Pick element + shift left side)
+  Insertion sort me array ko do part me socha jata hai — left side (sorted part) aur right side (unsorted part). Har step par right side se ek element uthaya jata hai (key), usko left side ke elements ke saath compare kiya jata hai, aur jab tak left side ka element key se bada hota hai, us element ko ek position right shift kiya jata hai. Jab correct position mil jati hai, tab key ko waha place kar diya jata hai. Ye process har element ke liye repeat hoti hai jab tak pura array sorted na ho jaye.
+  
   ## 7.4 Merge Sort
   ## 7.5 Quick Sort
