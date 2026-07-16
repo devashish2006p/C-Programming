@@ -70,3 +70,119 @@ Next = NULL
 5. Tail Pointer - Last node ko point karne wale pointer ko Tail Pointer kehte hai.
 6. NULL Pointer - Ishka mtlb hota hai no address mtlb aage koi node exist nhi karta.
 
+# 6. Linked List Traversal 
+**Traversal** ka matlab hota hai linked list ke har node ko **ek-ek baar visit/access karna**.
+
+---
+
+## 6.1 Purpose
+Traversal ka use hota hai:
+- Data print karna
+- Data search karna
+- Sum nikalna
+- Count nikalna
+- Maximum/Minimum find karna
+- Kisi condition ko check karna
+
+> **Note:** Traversal sirf nodes ko visit karta hai, structure ko modify nahi karta.
+
+---
+
+## 6.2 Traversal Logic
+
+1. Head se start karo.
+2. Ek temporary pointer (`temp`) banao.
+3. `temp = head`
+4. Jab tak `temp != NULL`
+   - Current node ka data access karo.
+   - `temp = temp->next`
+5. `temp` NULL hote hi traversal khatam.
+
+---
+
+## 6.3 Syntax
+
+```c
+struct node *temp = head;
+
+while(temp != NULL)
+{
+    // Process current node
+
+    temp = temp->next;
+}
+```
+
+---
+
+## 6.4 Diagram
+
+```text
+head
+ ↓
+[10|•] → [20|•] → [30|•] → [40|NULL]
+
+temp
+ ↓
+
+Iteration 1
+10
+
+Iteration 2
+20
+
+Iteration 3
+30
+
+Iteration 4
+40
+
+Iteration 5
+NULL (Stop)
+```
+
+---
+
+## 6.5 Time Complexity
+
+| Case | Complexity |
+|------|------------|
+| Best Case | O(n) |
+| Average Case | O(n) |
+| Worst Case | O(n) |
+
+> Har node ko ek baar visit karna padta hai.
+
+---
+
+## 6.6 Space Complexity
+
+```
+O(1)
+```
+
+Sirf ek temporary pointer use hota hai.
+
+---
+
+## 6.7 Important Points
+
+- Traversal **head** se start hota hai.
+- Original `head` ko change nahi karna chahiye.
+- Isliye ek **temporary pointer** use karte hain.
+- Last node ke baad `next = NULL` hota hai.
+- `temp == NULL` hone par loop stop ho jata hai.
+
+---
+
+## 6.8 Common Applications
+
+- Display linked list
+- Count nodes
+- Find sum
+- Search element
+- Find maximum/minimum
+- Check condition on every node
+
+---
+
